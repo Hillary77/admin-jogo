@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Lógica de Programação</h1>
+                        <h1>HTML</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -21,12 +21,12 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Expandable Table</h3>
+                                <h3 class="card-title">Registros HTML</h3>
                             </div>
                             <!-- ./card-header -->
                             <div class="card-body">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
+                                <table class="table-bordered table-hover">
+                                  
                                         <tr>
                                             <th>#</th>
                                             <th>Pergunta</th>
@@ -35,7 +35,6 @@
                                             <th>Botão</th>
 
                                         </tr>
-                                    </thead>
                                     <tbody>
                                         @foreach ($dados as $value)
                                             <tr data-widget="expandable-table" aria-expanded="false">
@@ -46,10 +45,10 @@
                                                 <td>{{ $value->subfase }}</td>
                                                 <td>{{ $value->resposta_correta }}</td>
                                                 <td>
-                                                    <form action="{{ route('logica.destroy', $value->id) }}" method="POST">
+                                                    <form action="{{ route('html.destroy', $value->id) }}" method="POST">
                                                         <a type="button"
                                                             class="btn btn-outline-success btn-sm rounded-circle"
-                                                            href="{{ route('logica.edit', $value->id) }}"><i class="fa-solid fa-trash"></i></a>
+                                                            href="{{ route('html.edit', $value->id) }}"><i class="fa-solid fa-trash"></i></a>
                                                         @csrf
                                                         @method('DELETE')
                                                         <input type="hidden" name="perguntas" value="{{ $value->id }}">

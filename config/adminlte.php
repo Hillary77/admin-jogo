@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'AdminCodeMaster',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -62,7 +62,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Admin</b>CodeMaster',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -191,7 +191,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-light elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -293,7 +293,7 @@ return [
         [
             'type' => 'navbar-search',
             'text' => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type' => 'fullscreen-widget',
@@ -307,12 +307,12 @@ return [
         ],
         [
             'text' => 'blog',
-            'url' => '/blog',
+            'url' => 'blog',
             'can' => 'manage-blog',
         ],
         [
             'text' => 'pages',
-            'url' => '/pages',
+            'url' => 'pages',
             'icon' => 'far fa-fw fa-file',
             'label' => 4,
             'label_color' => 'success',
@@ -325,7 +325,7 @@ return [
         ],
         [
             'text' => 'change_password',
-            'url' => 'admin/settings',
+            'url' => 'settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         ['header' => 'Cadastros'],
@@ -343,7 +343,7 @@ return [
                         ],
                         [
                             'text' => 'Listar',
-                            'url' => '#',
+                            'url' => 'logica',
                         ],
                     ],
                 ],
@@ -353,11 +353,11 @@ return [
                     'submenu' => [
                         [
                             'text' => 'Registrar',
-                            'url' => '#',
+                            'url' => 'html/create',
                         ],
                         [
                             'text' => 'Listar',
-                            'url' => '#',
+                            'url' => 'html',
                         ],
                     ],
                 ],
@@ -367,11 +367,11 @@ return [
                     'submenu' => [
                         [
                             'text' => 'Registrar',
-                            'url' => '#',
+                            'url' => 'css/create',
                         ],
                         [
                             'text' => 'Listar',
-                            'url' => '#',
+                            'url' => 'css',
                         ],
                     ],
                 ],

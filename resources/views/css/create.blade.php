@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Lógica de Programação</h1>
+                        <h1>CSS</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -27,14 +27,14 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form class="needs-validation" action="{{ route('logica.store') }}" method="POST" novalidate>
+                            <form class="needs-validation" action="{{ route('css.store') }}" method="POST" novalidate>
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputPergunta">Pergunta</label>
                                         <input type="text" class="form-control @error('pergunta') is-invalid @enderror"
                                             name="pergunta" id="exampleInputPergunta"
-                                            placeholder="Digite uma pergunta sobre lógica">
+                                            placeholder="Digite uma pergunta sobre CSS">
                                         @error('pergunta')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

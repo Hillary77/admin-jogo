@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Logica;
+use App\Models\Css;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
-class LogicaController extends Controller
+class CssController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +17,11 @@ class LogicaController extends Controller
      */
     public function index()
     {
-        // Puxar todos os dados do segundo banco de dados e enviar para a página de visualização
         $dados = DB::connection('mysql_second')
-            ->table('logicas')
-            ->get();
+        ->table('csses')
+        ->get();
 
-        return view('logica.index', compact('dados'));
+    return view('css.index', compact('dados'));
     }
 
     /**
@@ -32,7 +31,7 @@ class LogicaController extends Controller
      */
     public function create()
     {
-        return view(view: 'logica.create');
+        return view(view: 'css.create');
     }
 
     /**
@@ -54,7 +53,7 @@ class LogicaController extends Controller
         ]);
 
         DB::connection('mysql_second')
-            ->table('logicas')
+            ->table('csses')
             ->insert([
                 'pergunta' => $request->input('pergunta'),
                 'subfase' => $request->input('subfase'),
@@ -69,10 +68,10 @@ class LogicaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Css  $css
      * @return \Illuminate\Http\Response
      */
-    public function show(Logica $logica)
+    public function show(Css $css)
     {
         //
     }
@@ -80,48 +79,45 @@ class LogicaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Css  $css
      * @return \Illuminate\Http\Response
      */
-    public function edit(Logica $logica)
+    public function edit(Css $css)
     {
-        
-        return view('logica.edit', ['value' => $logica]);
+        return view('css.edit', ['value' => $css]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Css  $css
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Logica $logica)
+    public function update(Request $request, Css $css)
     {
             //Atualizar dados ja cadastrados no banco de dados
-            $logica->pergunta = $request->input('pergunta');
-            $logica->subfase = $request->input('subfase');
-            $logica->resposta_correta = $request->input('resposta_correta');
-            $logica->opcao1 = $request->input('opcao1');
-            $logica->opcao2 = $request->input('opcao2');
-            $logica->opcao3 = $request->input('opcao3');
-            $logica->opcao4 = $request->input('opcao4');
-            $logica->save();
+            $css->pergunta = $request->input('pergunta');
+            $css->subfase = $request->input('subfase');
+            $css->opcao1 = $request->input('opcao1');
+            $css->opcao2 = $request->input('opcao2');
+            $css->opcao3 = $request->input('opcao3');
+            $css->opcao4 = $request->input('opcao4');
+            $css->save();
             //Redirecionar depois de concluído
-            return redirect()->route('logica.index');
-        }
-    
+            return redirect()->route('css.index');
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Css  $css
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Logica $logica)
+    public function destroy(Css $css)
     {
-       //Remover dados do banco de dados
-       $logica->delete();
-       return redirect()->route('logica.index');
+           //Remover dados do banco de dados
+       $css->delete();
+       return redirect()->route('css.index');
     }
 }

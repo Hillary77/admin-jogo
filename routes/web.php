@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\LogicaController;
+use App\Http\Controllers\JogadoresController;
+use App\Http\Controllers\HtmlController;
+use App\Http\Controllers\CssController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +22,9 @@ Route::get('/', function () {
 });
 
 Route::resource('/logica', LogicaController::class);
+Route::resource('/html', HtmlController::class);
+Route::resource('/css', CssController::class);
+Route::resource('/jogadores', JogadoresController::class);
 
 Auth::routes();
 

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Logica;
+use App\Models\Html;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
-class LogicaController extends Controller
+class HtmlController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +17,11 @@ class LogicaController extends Controller
      */
     public function index()
     {
-        // Puxar todos os dados do segundo banco de dados e enviar para a página de visualização
         $dados = DB::connection('mysql_second')
-            ->table('logicas')
-            ->get();
+        ->table('htmls')
+        ->get();
 
-        return view('logica.index', compact('dados'));
+    return view('html.index', compact('dados'));
     }
 
     /**
@@ -32,7 +31,7 @@ class LogicaController extends Controller
      */
     public function create()
     {
-        return view(view: 'logica.create');
+        return view(view: 'html.create');
     }
 
     /**
@@ -54,7 +53,7 @@ class LogicaController extends Controller
         ]);
 
         DB::connection('mysql_second')
-            ->table('logicas')
+            ->table('htmls')
             ->insert([
                 'pergunta' => $request->input('pergunta'),
                 'subfase' => $request->input('subfase'),
@@ -69,10 +68,10 @@ class LogicaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Html  $html
      * @return \Illuminate\Http\Response
      */
-    public function show(Logica $logica)
+    public function show(Html $html)
     {
         //
     }
@@ -80,48 +79,45 @@ class LogicaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Html  $html
      * @return \Illuminate\Http\Response
      */
-    public function edit(Logica $logica)
+    public function edit(Html $html)
     {
-        
-        return view('logica.edit', ['value' => $logica]);
+        return view('html.edit', ['value' => $html]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Html  $html
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Logica $logica)
+    public function update(Request $request, Html $html)
     {
             //Atualizar dados ja cadastrados no banco de dados
-            $logica->pergunta = $request->input('pergunta');
-            $logica->subfase = $request->input('subfase');
-            $logica->resposta_correta = $request->input('resposta_correta');
-            $logica->opcao1 = $request->input('opcao1');
-            $logica->opcao2 = $request->input('opcao2');
-            $logica->opcao3 = $request->input('opcao3');
-            $logica->opcao4 = $request->input('opcao4');
-            $logica->save();
+            $html->pergunta = $request->input('pergunta');
+            $html->subfase = $request->input('subfase');
+            $html->opcao1 = $request->input('opcao1');
+            $html->opcao2 = $request->input('opcao2');
+            $html->opcao3 = $request->input('opcao3');
+            $html->opcao4 = $request->input('opcao4');
+            $html->save();
             //Redirecionar depois de concluído
-            return redirect()->route('logica.index');
-        }
-    
+            return redirect()->route('html.index');
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Logica  $logica
+     * @param  \App\Models\Html  $html
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Logica $logica)
+    public function destroy(Html $html)
     {
-       //Remover dados do banco de dados
-       $logica->delete();
-       return redirect()->route('logica.index');
+         //Remover dados do banco de dados
+       $html->delete();
+       return redirect()->route('html.index');
     }
 }
