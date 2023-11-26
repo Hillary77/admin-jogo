@@ -166,12 +166,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-info',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn-flat btn-info',
 
     /*
     |--------------------------------------------------------------------------
@@ -311,23 +311,17 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'pages',
+            'text' => 'Dependências Sistema',
             'url' => 'pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+            'icon' => 'far fa-fw fa-file'
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Configurações da conta'],
         [
-            'text' => 'profile',
-            'url' => 'settings',
+            'text' => 'Atualizar Perfil',
+            'url' => 'perfil/edit',
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
-            'text' => 'change_password',
-            'url' => 'settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+     
         ['header' => 'Cadastros'],
         [
             'text' => 'Niveis',
@@ -338,7 +332,7 @@ return [
                     'url' => '#',
                     'submenu' => [
                         [
-                            'text' => 'Registrar',
+                            'text' => 'Cadastrar',
                             'url' => 'logica/create',
                         ],
                         [
@@ -352,7 +346,7 @@ return [
                     'url' => '#',
                     'submenu' => [
                         [
-                            'text' => 'Registrar',
+                            'text' => 'Cadastrar',
                             'url' => 'html/create',
                         ],
                         [
@@ -366,7 +360,7 @@ return [
                     'url' => '#',
                     'submenu' => [
                         [
-                            'text' => 'Registrar',
+                            'text' => 'Cadastrar',
                             'url' => 'css/create',
                         ],
                         [

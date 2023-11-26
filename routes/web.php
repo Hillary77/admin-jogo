@@ -5,6 +5,12 @@ use App\Http\Controllers\JogadoresController;
 use App\Http\Controllers\HtmlController;
 use App\Http\Controllers\CssController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PerfilController;
+
+Route::get('/perfil/edit', [PerfilController::class, 'editarPerfil'])->name('perfil.edit');
+Route::post('/perfil/atualizar-perfil', [PerfilController::class, 'atualizarPerfil'])->name('perfil.atualizarPerfil');
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +26,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//página de dados
+Route::get('/pages', function () {
+    return view('pages');
+})->name('pages');
+
 
 Route::resource('/logica', LogicaController::class);
 Route::resource('/html', HtmlController::class);

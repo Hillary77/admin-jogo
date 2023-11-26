@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Logica;
+use App\Models\Css;
+use App\Models\Html;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $jogadoresCount = DB::connection('mysql_second')
+        ->table('users')
+        ->count();
+
+        $usersCount = User::count();  // Correção aqui
+
+        return view('home', compact('jogadoresCount', 'usersCount'));
     }
 }

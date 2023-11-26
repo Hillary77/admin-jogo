@@ -21,7 +21,7 @@
     <link rel="stylesheet"
         href="{{ asset('frontend/plugins/fontawesome-free/css/all.min.csstemplate/vendor/bootstrap/css/bootstrap.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('frontend/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/dist/css/adminlte.css') }}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

@@ -64,6 +64,7 @@ class LogicaController extends Controller
                 'opcao3' => $request->input('opcao3'),
                 'opcao4' => $request->input('opcao4'),
             ]);
+            return redirect()->route('logica.index');
     }
 
     /**

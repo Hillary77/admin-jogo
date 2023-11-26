@@ -1,19 +1,108 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
-
-@section('content_header')
-    <h1 class="m-0 text-dark">Dashboard</h1>
-@stop
-
 @section('content')
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <p class="mb-0">You are logged in!</p>
-                </div>
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Painel de Controle</h1>
             </div>
         </div>
     </div>
-@stop
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ $usersCount }}</h3>
+                            <p>Adminitradores</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-6">
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{ $jogadoresCount }}</h3>
+                            <p>Jogadores</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Registros Perguntas Geral</h3>
+                        </div>
+                        <!-- ./card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-info">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Pergunta</th>
+                                        <th>Subfase</th>
+                                        <th>Resposta</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                        <tr data-widget="expandable-table" aria-expanded="false">
+                                            <td>
+                                                <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
+                                            </td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+
+                                        </tr>
+                                        <tr class="expandable-body">
+                                            <td colspan="8">
+                                                <div class="p-0">
+                                                    <table class="table table-hover">
+
+
+                                                        <tr>
+                                                            <th>Opção 01</th>
+                                                            <th>Opção 02</th>
+                                                            <th>Opção 03</th>
+                                                            <th>Opção 04</th>
+                                                        </tr>
+
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>...</td>
+                                                                <td>...</td>
+                                                                <td>...</td>
+                                                                <td>...</td>
+
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
