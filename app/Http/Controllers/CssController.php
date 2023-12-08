@@ -50,6 +50,7 @@ class CssController extends Controller
             'opcao2' => ['required'],
             'opcao3' => ['required'],
             'opcao4' => ['required'],
+            'pontos' => ['required']
         ]);
 
         DB::connection('mysql_second')
@@ -62,6 +63,7 @@ class CssController extends Controller
                 'opcao2' => $request->input('opcao2'),
                 'opcao3' => $request->input('opcao3'),
                 'opcao4' => $request->input('opcao4'),
+                'pontos' => $request->input('pontos'),
             ]);
             return redirect()->route('css.index');
     }
@@ -104,6 +106,7 @@ class CssController extends Controller
             $css->opcao2 = $request->input('opcao2');
             $css->opcao3 = $request->input('opcao3');
             $css->opcao4 = $request->input('opcao4');
+            $css->pontos = $request->input('pontos');
             $css->save();
             //Redirecionar depois de concluído
             return redirect()->route('css.index');

@@ -26,7 +26,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form class="needs-validation" action="{{ route('logica.update', [$value->id]) }}" method="POST"
+                        <form class="needs-validation" action="{{ route('html.update', [$value->id]) }}" method="POST"
                             novalidate>
                             @csrf
                             @method('PUT')
@@ -104,6 +104,17 @@
                                         name="opcao4" id="exampleInputOpcao4"
                                         placeholder="Digite uma opção para a pergunta" value="{{ $value->opcao4 }}">
                                     @error('opcao4')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputOpcao4">Pontos</label>
+                                    <input type="text" class="form-control @error('pontos') is-invalid @enderror"
+                                        name="pontos" id="exampleInputOpcao4"
+                                        placeholder="Digite uma pontuação para está pergunta" value="{{ $value->pontos }}">
+                                    @error('pontos')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

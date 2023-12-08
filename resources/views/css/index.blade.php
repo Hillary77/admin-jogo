@@ -30,6 +30,7 @@
                                         <th>Pergunta</th>
                                         <th>Subfase</th>
                                         <th>Resposta</th>
+                                        <th>Pontos</th>
                                         <th>Botão</th>
 
                                     </tr>
@@ -43,6 +44,7 @@
                                             <td>{{ $value->pergunta }}</td>
                                             <td>{{ $value->subfase }}</td>
                                             <td>{{ $value->resposta_correta }}</td>
+                                            <td>{{ $value->pontos }} pontos</td>
                                             <td>
                                                 <form action="{{ route('css.destroy', $value->id) }}" method="POST">
                                                     <a type="button" class="btn btn-outline-success btn-sm rounded-circle"

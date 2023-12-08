@@ -90,10 +90,11 @@
             @yield('content')
         </main>
     </div>
-
+      
     <!-- jQuery -->
     <script src="{{ asset('frontend/plugins/jquery/jquery.min.js') }}" defer></script><!-- Bootstrap 4 -->
     <script src="{{ asset('frontend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('frontend/plugins/chart.js/Chart.min.js') }}" defer></script>
     <!-- bs-custom-file-input -->
     <script src="{{ asset('frontend/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}" defer></script>
     <!-- AdminLTE App -->

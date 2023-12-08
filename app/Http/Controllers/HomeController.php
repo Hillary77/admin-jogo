@@ -12,7 +12,6 @@ class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
      * @return void
      */
     public function __construct()
@@ -27,12 +26,27 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $logica = DB::connection('mysql_second')
+            ->table('logicas')
+            ->get();
+
+        $html = DB::connection('mysql_second')
+            ->table('htmls')
+            ->get();
+
+        $css = DB::connection('mysql_second')
+            ->table('csses')
+            ->get();
+
+            $dados = $logica->merge($html)->merge($css);
+
+
         $jogadoresCount = DB::connection('mysql_second')
-        ->table('users')
-        ->count();
+            ->table('users')
+            ->count();
 
-        $usersCount = User::count();  // Correção aqui
+        $usersCount = User::count(); // Correção aqui
 
-        return view('home', compact('jogadoresCount', 'usersCount'));
+        return view('home', compact('jogadoresCount', 'usersCount', 'dados'));
     }
 }

@@ -57,14 +57,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   
+                                    @foreach ($dados as $value)
                                         <tr data-widget="expandable-table" aria-expanded="false">
                                             <td>
                                                 <i class="expandable-table-caret fas fa-caret-right fa-fw"></i>
                                             </td>
-                                            <td>...</td>
-                                            <td>...</td>
-                                            <td>...</td>
+                                            <td>{{ $value->pergunta }}</td>
+                                            <td>{{ $value->subfase }}</td>
+                                            <td>{{ $value->resposta_correta }}</td>
 
                                         </tr>
                                         <tr class="expandable-body">
@@ -83,18 +83,17 @@
 
                                                         <tbody>
                                                             <tr>
-                                                                <td>...</td>
-                                                                <td>...</td>
-                                                                <td>...</td>
-                                                                <td>...</td>
-
+                                                                <td>{{ $value->opcao1 }}</td>
+                                                                <td>{{ $value->opcao2 }}</td>
+                                                                <td>{{ $value->opcao3 }}</td>
+                                                                <td>{{ $value->opcao4 }}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
                                             </td>
                                         </tr>
-                                   
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -102,6 +101,7 @@
                     </div>
                     <!-- /.card -->
                 </div>
+             
             </div>
         </div>
     </section>

@@ -30,8 +30,8 @@
                                         <th>Pergunta</th>
                                         <th>Subfase</th>
                                         <th>Resposta</th>
+                                        <th>Pontuação</th>
                                         <th>Botão</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,6 +43,7 @@
                                             <td>{{ $value->pergunta }}</td>
                                             <td>{{ $value->subfase }}</td>
                                             <td>{{ $value->resposta_correta }}</td>
+                                            <td>{{ $value->pontos }} pontos</td>
                                             <td>
                                                 <form action="{{ route('logica.destroy', $value->id) }}" method="POST">
                                                     <a type="button" class="btn btn-outline-success btn-sm rounded-circle"
@@ -61,24 +62,18 @@
                                             <td colspan="8">
                                                 <div class="p-0">
                                                     <table class="table table-hover">
-
-
                                                         <tr>
-
                                                             <th>Opção 01</th>
                                                             <th>Opção 02</th>
                                                             <th>Opção 03</th>
                                                             <th>Opção 04</th>
                                                         </tr>
-
-
                                                         <tbody>
                                                             <tr>
                                                                 <td>{{ $value->opcao1 }}</td>
                                                                 <td>{{ $value->opcao2 }}</td>
                                                                 <td>{{ $value->opcao3 }}</td>
                                                                 <td>{{ $value->opcao4 }}</td>
-
                                                             </tr>
                                                         </tbody>
                                                     </table>

@@ -50,6 +50,7 @@ class HtmlController extends Controller
             'opcao2' => ['required'],
             'opcao3' => ['required'],
             'opcao4' => ['required'],
+            'pontos' => ['required'],
         ]);
 
         DB::connection('mysql_second')
@@ -62,6 +63,7 @@ class HtmlController extends Controller
                 'opcao2' => $request->input('opcao2'),
                 'opcao3' => $request->input('opcao3'),
                 'opcao4' => $request->input('opcao4'),
+                'pontos' => $request->input('pontos')
             ]);
             return redirect()->route('html.index');
     }
@@ -104,6 +106,7 @@ class HtmlController extends Controller
             $html->opcao2 = $request->input('opcao2');
             $html->opcao3 = $request->input('opcao3');
             $html->opcao4 = $request->input('opcao4');
+            $html->pontos = $request->input('pontos');
             $html->save();
             //Redirecionar depois de concluído
             return redirect()->route('html.index');
