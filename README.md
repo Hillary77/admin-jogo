@@ -48,4 +48,4 @@
     <img src="public/frontend/docs/assets/img/tebela.png" alt="" style="width: auto 0px;">
 
 </div>
-<hr>
+
