@@ -27,6 +27,10 @@
     <br>
     <img src="public/frontend/docs/assets/img/init.png" alt="" style="width: auto 0px;">
     <hr>
+      <b>Página Depêndencia</b><br>
+    <br>
+    <img src="public/frontend/docs/assets/img/dependencias" alt="" style="width: auto 0px;">
+    <hr>
       <b>Página Atualizar senha</b><br>
     <br>
     <img src="public/frontend/docs/assets/img/senha.png" alt="" style="width: auto 0px;">
